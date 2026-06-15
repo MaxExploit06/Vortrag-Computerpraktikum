@@ -5,12 +5,10 @@ def coin_toss():
 
 def main():
     n = int(input("Wie viele Wiederholungen möchten Sie?\n"))
-    Ergebnisse = []
     Kopf = 0
     Zahl = 0
     for i in range (0, n):
         Ergebniss = coin_toss()
-        Ergebnisse.append(Ergebniss)
         if (Ergebniss == "K"):
             Kopf += 1
         else:

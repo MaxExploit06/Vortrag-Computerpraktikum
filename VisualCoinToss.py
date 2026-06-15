@@ -8,11 +8,11 @@ def coin_toss():
 
 
 #Config
-GRID_SIZE = 10          # 10x10 grid
-PADDING = 2             # spacing between cells
+GRID_SIZE = 10          #kann geändert werden
+PADDING = 2
 
-HEADS_COLOR = "#2e7d32"     # green
-TAILS_COLOR = "#c62828"     # red
+HEADS_COLOR = "#2e7d32"
+TAILS_COLOR = "#c62828"
 WINDOW_COLOR = "#202020"
 
 
