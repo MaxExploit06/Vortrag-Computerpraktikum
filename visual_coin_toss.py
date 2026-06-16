@@ -11,9 +11,9 @@ def coin_toss():
 GRID_SIZE = 10          #kann geändert werden
 PADDING = 2
 
-HEADS_COLOR = "#2e7d32"
-TAILS_COLOR = "#c62828"
-WINDOW_COLOR = "#202020"
+HEADS_COLOR = "#2d7d31"
+TAILS_COLOR = "#c22323"
+WINDOW_COLOR = "#212121"
 
 
 #Data
@@ -96,7 +96,7 @@ def redraw(event=None):
     if width <= 1 or height <= 1:
         return
 
-    # Approximate cell size
+    #current cell size
     cell_width = width // GRID_SIZE
     cell_height = height // GRID_SIZE
 
@@ -129,7 +129,7 @@ def redraw(event=None):
             label.configure(image=tk_tails)
 
 
-#When resized, recalculate image size
+#When resized, calculate image size again
 grid_frame.bind("<Configure>", redraw)
 
 
