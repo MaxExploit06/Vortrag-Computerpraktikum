@@ -2,12 +2,6 @@ import random
 
 #global variables
 player_balance = int(input("\nMit wie viel Geld wollen Sie anfangen?: "))
-main_deck = [
-    "K7", "K8", "K9", "K10", "KB", "KD", "KK", "KA",            #Kreuz
-    "P7", "P8", "P9", "P10", "PB", "PD", "PK", "PA",            #Pik
-    "H7", "H8", "H9", "H10", "HB", "HD", "HK", "HA",            #Herz
-    "C7", "C8", "C9", "C10", "CB", "CD", "CK", "CA"             #Karo
-]
 
 def main():
     global player_balance
@@ -17,10 +11,10 @@ def main():
     player_balance -= len(player_cards)
 
     house_cards = [
-    "K7", "K8", "K9", "K10", "KB", "KD", "KK", "KA",
-    "P7", "P8", "P9", "P10", "PB", "PD", "PK", "PA",
-    "H7", "H8", "H9", "H10", "HB", "HD", "HK", "HA",
-    "C7", "C8", "C9", "C10", "CB", "CD", "CK", "CA"
+    "K7", "K8", "K9", "K10", "KB", "KD", "KK", "KA",        #Kreuz
+    "P7", "P8", "P9", "P10", "PB", "PD", "PK", "PA",        #Pik
+    "H7", "H8", "H9", "H10", "HB", "HD", "HK", "HA",        #Herz
+    "C7", "C8", "C9", "C10", "CB", "CD", "CK", "CA"         #Karo
     ]
 
     random.shuffle(house_cards)
@@ -47,6 +41,8 @@ def main():
 
     player_balance += payout
 
+    amount = payout - len(player_cards)
+
     print("Die folgenden Karten wurden gezogen:")
     print(f"1. Paar: {first_pair}")
     print(f"2. Paar: {second_pair}")
@@ -54,8 +50,11 @@ def main():
     print(f"4. Paar: {fourth_pair}")
     print(f"großes Los: {big_lot}")
     print()
-    print(f"Ihre Auszahlung: {payout}")
-    print(f"Ihr Saldo: {player_balance}")
+    if amount < 0:
+        print("Ihr Verlust:", abs(amount), "Euro")
+    else:
+        print("Ihr Gewinn:", amount, "Euro")
+    print("Ihr Saldo:", player_balance, "Euro")
 
 
     #TODO: show money left
