@@ -1,6 +1,6 @@
 import random
 
-#global variables
+#Global variables
 player_balance = int(input("\nMit wie viel Geld wollen Sie anfangen?: "))
 
 def main():
@@ -57,7 +57,6 @@ def main():
     print("Ihr Saldo:", player_balance, "Euro")
 
 
-    #TODO: show money left
     choice = input("Noch eine Runde? [J/N]: ").lower()
     if choice == "n":
         quit()
